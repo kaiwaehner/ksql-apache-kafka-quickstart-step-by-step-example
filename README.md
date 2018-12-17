@@ -19,9 +19,9 @@ Start KSQL Server and its dependencies ZooKeeper and Kafka Broker. Schema Regist
 
 ## Generate continous test data streams
 
-    /Users/kai.waehner/confluent-5.0.0/bin/ksql-datagen quickstart=users format=json topic=users maxInterval=1000  propertiesFile=/Users/kai.waehner/confluent-5.0.0/etc/ksql/datagen.properties
+    /Users/kai.waehner/confluent-5.1.0/bin/ksql-datagen quickstart=users format=json topic=users maxInterval=1000  propertiesFile=/Users/kai.waehner/confluent-5.1.0/etc/ksql/datagen.properties
 
-    /Users/kai.waehner/confluent-5.0.0/bin/ksql-datagen quickstart=pageviews format=delimited topic=pageviews maxInterval=100 propertiesFile=/Users/kai.waehner/confluent-5.0.0/etc/ksql/datagen.properties
+    /Users/kai.waehner/confluent-5.1.0/bin/ksql-datagen quickstart=pageviews format=delimited topic=pageviews maxInterval=100 propertiesFile=/Users/kai.waehner/confluent-5.1.0/etc/ksql/datagen.properties
 
 ## Start KSQL CLI
 
@@ -88,7 +88,7 @@ Consume table from beginning (including values which are overwritten):
 
 ## AVRO for automatic inference of message structure
 
-    /Users/kai.waehner/confluent-5.0.0/bin/ksql-datagen quickstart=ratings format=avro topic=ratings maxInterval=500
+    /Users/kai.waehner/confluent-5.1.0/bin/ksql-datagen quickstart=ratings format=avro topic=ratings maxInterval=500
 
     PRINT 'ratings' FROM BEGINNING;
 
