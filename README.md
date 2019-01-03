@@ -31,7 +31,7 @@ Start KSQL Server and its dependencies ZooKeeper and Kafka Broker. Schema Regist
     SHOW TOPICS;
     PRINT 'pageviews' FROM BEGINNING;
 
-    CREATE STREAM pageviews_original (viewtime bigint, userid varchar, pageid varchar) WITH (kafka_topic='pageviews', value_format='DELIMITED');
+    CREATE STREAM pageviews_original (viewtime bigint, userid varchar, pageid varchar) WITH (kafka_topic='pageviews', value_format='DELIMITED', key='userid');
 
     SHOW STREAMS;
     DESCRIBE pageviews_original;
@@ -40,6 +40,16 @@ Start KSQL Server and its dependencies ZooKeeper and Kafka Broker. Schema Regist
     SELECT pageid, userid FROM pageviews_original LIMIT 10;
 
     SELECT * FROM pageviews_original; 
+
+## KSQL Functions
+
+    LIST FUNCTIONS;
+
+    DESCRIBE FUNCTION MAX;
+
+    SELECT pageid, userid, MAX(viewtime) FROM pageviews_original GROUP BY userid LIMIT 10;
+
+You can also [create your own User Defined Functions (UDF)](https://www.confluent.io/blog/build-udf-udaf-ksql-5-0) easily.
 
 ## First TABLE
 
