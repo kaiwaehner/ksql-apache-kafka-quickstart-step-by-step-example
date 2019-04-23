@@ -80,9 +80,9 @@ Consume table from beginning (including values which are overwritten):
 
     kafka-console-consumer --bootstrap-server localhost:9092 --topic pageviews --from-beginning
 
-    kafka-topics --zookeeper localhost:2181 --list
+    kafka-topics --bootstrap-server localhost:9092 --list
 
-    kafka-topics --zookeeper localhost:2181 --describe
+    kafka-topics --bootstrap-server localhost:9092 --describe
 
 ## STREAM TABLE JOIN
 
