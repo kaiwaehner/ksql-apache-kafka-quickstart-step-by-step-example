@@ -47,7 +47,7 @@ Start KSQL Server and its dependencies ZooKeeper and Kafka Broker. Schema Regist
 
     DESCRIBE FUNCTION MAX;
 
-    SELECT pageid, userid, MAX(viewtime) FROM pageviews_original GROUP BY userid LIMIT 10;
+    SELECT pageid, userid, MAX(viewtime) FROM pageviews_original GROUP BY pageid, userid LIMIT 10;
 
 You can also [create your own User Defined Functions (UDF)](https://www.confluent.io/blog/build-udf-udaf-ksql-5-0) easily.
 
