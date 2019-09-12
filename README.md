@@ -11,17 +11,17 @@ The code is developed and tested on Mac and Linux operating systems. As Kafka do
 
 ## Start server components
 
-    confluent status
+    confluent local status
 
 Start KSQL Server and its dependencies ZooKeeper and Kafka Broker. Schema Registry is also started, but only required if you use Avro.
 
-    confluent start ksql-server
+    confluent local start ksql-server
 
 ## Generate continous test data streams
 
-    /Users/kai.waehner/confluent-5.2.0/bin/ksql-datagen quickstart=users format=json topic=users maxInterval=1000  propertiesFile=/Users/kai.waehner/confluent-5.2.0/etc/ksql/datagen.properties
+    /Users/kai.waehner/confluent-5.3.0/bin/ksql-datagen quickstart=users format=json topic=users maxInterval=1000  propertiesFile=/Users/kai.waehner/confluent-5.3.0/etc/ksql/datagen.properties
 
-    /Users/kai.waehner/confluent-5.2.0/bin/ksql-datagen quickstart=pageviews format=delimited topic=pageviews maxInterval=100 propertiesFile=/Users/kai.waehner/confluent-5.2.0/etc/ksql/datagen.properties
+    /Users/kai.waehner/confluent-5.3.0/bin/ksql-datagen quickstart=pageviews format=delimited topic=pageviews maxInterval=100 propertiesFile=/Users/kai.waehner/confluent-5.3.0/etc/ksql/datagen.properties
 
 ## Start KSQL CLI
 
@@ -98,7 +98,7 @@ Consume table from beginning (including values which are overwritten):
 
 ## AVRO for automatic inference of message structure
 
-    /Users/kai.waehner/confluent-5.2.0/bin/ksql-datagen quickstart=ratings format=avro topic=ratings maxInterval=500
+    /Users/kai.waehner/confluent-5.3.0/bin/ksql-datagen quickstart=ratings format=avro topic=ratings maxInterval=500
 
     PRINT 'ratings' FROM BEGINNING;
 
@@ -115,8 +115,8 @@ KSQL CLI => Type 'Exit'
 
 STOP ALL DATA GENERATORS via CTRL-C
 
-    confluent destroy
-    confluent status
+    confluent local destroy
+    confluent local status
 
 
 
